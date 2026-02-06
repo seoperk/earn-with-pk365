@@ -1,0 +1,160 @@
+:root{
+  --bg:#0A0F1F;
+  --card:#0F1730;
+  --text:#ECF4FF;
+  --muted:#A9B8E6;
+  --a:#00D4FF;
+  --b:#FF2E88;
+  --radius:20px;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  background:
+    radial-gradient(1000px 600px at 20% 0%, rgba(0,212,255,.18), transparent 60%),
+    radial-gradient(1000px 600px at 80% 10%, rgba(255,46,136,.10), transparent 60%),
+    var(--bg);
+  color:var(--text);
+}
+
+.wrap{max-width:980px;margin:0 auto;padding:22px}
+.header{padding:20px 0 10px;border-bottom:1px solid rgba(255,255,255,.06)}
+h1{margin:12px 0 10px;font-size:2rem;line-height:1.15}
+.answer{color:var(--muted);font-size:1.03rem;max-width:920px}
+.promo{color:var(--a);font-weight:900;text-decoration:none}
+.promo:hover{text-decoration:underline}
+
+.topRow{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.logo{
+  font-weight:900;
+  letter-spacing:.4px;
+  padding:8px 12px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.10);
+  background:rgba(255,255,255,.03);
+}
+.tocBtn{
+  cursor:pointer;
+  border-radius:999px;
+  padding:10px 12px;
+  border:1px solid rgba(0,212,255,.35);
+  background:rgba(0,212,255,.10);
+  color:var(--text);
+  font-weight:900;
+}
+
+.card{
+  margin-top:14px;
+  padding:18px;
+  border-radius:var(--radius);
+  border:1px solid rgba(255,255,255,.08);
+  background:rgba(255,255,255,.03);
+}
+
+.flow{
+  display:flex;gap:10px;flex-wrap:wrap;
+  margin-top:12px;
+  align-items:center;
+}
+.node{
+  padding:10px 12px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.10);
+  background:rgba(0,0,0,.18);
+}
+.arrow{color:var(--a);font-weight:900}
+
+.split{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  margin-top:12px;
+}
+@media(max-width:760px){.split{grid-template-columns:1fr}}
+.mini{
+  padding:14px;border-radius:18px;
+  border:1px solid rgba(255,255,255,.08);
+  background:rgba(0,0,0,.18);
+}
+.mini h3{margin:0 0 8px}
+.danger{border-color: rgba(255,46,136,.25)}
+.danger li{color:#ffd1e5}
+
+.table{margin-top:12px;border-radius:18px;overflow:hidden;border:1px solid rgba(255,255,255,.10)}
+.tr{display:grid;grid-template-columns:1fr 1fr 1fr}
+.tr div{padding:12px 12px;border-bottom:1px solid rgba(255,255,255,.06)}
+.tr.head{background:rgba(0,212,255,.08);font-weight:900}
+.tr:last-child div{border-bottom:none}
+
+.safe li{margin:8px 0}
+.relatedLinks{display:flex;gap:10px;flex-wrap:wrap}
+.relatedLinks a{
+  text-decoration:none;color:var(--text);
+  border:1px solid rgba(255,255,255,.10);
+  padding:8px 12px;border-radius:999px;
+}
+.relatedLinks a:hover{border-color: rgba(0,212,255,.35); color:var(--a)}
+
+.faq details{
+  margin:10px 0;
+  padding:12px;border-radius:16px;
+  border:1px solid rgba(255,255,255,.10);
+  background:rgba(0,0,0,.18);
+}
+.faq summary{cursor:pointer;font-weight:900}
+
+.footer{
+  margin-top:18px;
+  padding-top:14px;
+  border-top:1px solid rgba(255,255,255,.08);
+  display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+}
+.disc{color:var(--muted)}
+
+/* Drawer TOC */
+.drawerBackdrop{
+  position:fixed;inset:0;
+  background:rgba(0,0,0,.55);
+  opacity:0;pointer-events:none;
+  transition:.2s ease;
+  z-index:20;
+}
+.drawer{
+  position:fixed;top:0;right:-360px;
+  width:340px;max-width:92vw;
+  height:100vh;
+  background:rgba(15,23,48,.96);
+  border-left:1px solid rgba(255,255,255,.10);
+  backdrop-filter: blur(10px);
+  transition:.22s ease;
+  z-index:21;
+  padding:14px;
+}
+.drawerHead{display:flex;justify-content:space-between;gap:10px;align-items:center}
+.drawerTitle{font-weight:1000}
+.drawerSub{color:var(--muted);font-size:.95rem}
+.closeBtn{
+  cursor:pointer;
+  border-radius:14px;
+  padding:10px 12px;
+  border:1px solid rgba(255,255,255,.12);
+  background:rgba(0,0,0,.18);
+  color:var(--text);
+  font-weight:900;
+}
+.drawerLinks{margin-top:14px;display:grid;gap:10px}
+.drawerLinks a{
+  padding:12px 12px;
+  border-radius:16px;
+  border:1px solid rgba(255,255,255,.10);
+  background:rgba(255,255,255,.03);
+  text-decoration:none;
+  color:var(--text);
+}
+.drawerLinks a:hover{border-color: rgba(0,212,255,.35); color:var(--a)}
+
+.drawer.open{right:0}
+.drawerBackdrop.open{opacity:1;pointer-events:auto}
